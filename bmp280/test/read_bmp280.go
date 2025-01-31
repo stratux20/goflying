@@ -1,9 +1,13 @@
 package main
 
 import (
+HEAD
 	"github.com/stratux/goflying/bmp280"
+
+	"../../bmp280"
+	"../../embd"
+b3nn0/master
 	"fmt"
-	"github.com/kidoman/embd"
 	"time"
 )
 

@@ -1,6 +1,18 @@
 package mpu9250
 
+type IMUChipType int
+
 const (
+	// Supported IMUs.
+	MPU9250 IMUChipType = iota
+	ICM20948
+
+	// WHO_AM_I values to differentiate between the different IMUs.
+	MPUREG_WHO_AM_I     = 0x75
+	MPUREG_WHO_AM_I_VAL = 0x71 // Expected value.
+	ICMREG_WHO_AM_I     = 0x00
+	ICMREG_WHO_AM_I_VAL = 0xEA // Expected value.
+
 	MPU_ADDRESS               = 0x68
 	MPUREG_XG_OFFS_TC         = 0x00
 	MPUREG_YG_OFFS_TC         = 0x01

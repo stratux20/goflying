@@ -6,6 +6,9 @@ Reference 2: https://forums.adafruit.com/viewtopic.php?f=19&t=89049
 package bmp280
 
 import (
+	"../embd"
+	_ "../embd/host/all"
+	_ "../embd/host/rpi"
 	"fmt"
 	"log"
 	"math"
@@ -24,7 +27,10 @@ const (
 	ChipID1 = 0x56
 	ChipID2 = 0x57
 	ChipID3 = 0x58
+HEAD
 	ChipID4 = 0x60
+
+b3nn0/master
 	// Power Mode Definitions
 	SleepMode     = 0x00
 	ForcedMode    = 0x01

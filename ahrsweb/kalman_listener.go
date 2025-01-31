@@ -7,7 +7,11 @@ import (
 	//"math"
 	"net/url"
 
+HEAD
 	"github.com/stratux/goflying/ahrs"
+
+	"../ahrs"
+b3nn0/master
 	"fmt"
 	"github.com/gorilla/websocket"
 )
