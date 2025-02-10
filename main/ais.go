@@ -18,7 +18,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/b3nn0/stratux/common"
+	"github.com/stratux/stratux/common"
+	"stratux/main/gen_gdl90"
 
 	"github.com/BertoldVdb/go-ais"
 	"github.com/BertoldVdb/go-ais/aisnmea"
@@ -140,7 +141,7 @@ func importAISTrafficMessage(msg *aisnmea.VdmPacket) {
 	if header.MessageID == 5 {
 		var shipStaticData ais.ShipStaticData = msg.Packet.(ais.ShipStaticData)
 
-		ti.Tail = strings.TrimSpace(shipStaticData.Name)
+		ti.Tail = "AIS" + strings.TrimSpace(shipStaticData.Name)
 		ti.Reg = strings.TrimSpace(shipStaticData.CallSign)
 		ti.SurfaceVehicleType = uint16(shipStaticData.Type)
 		// Store in case this was the first message and we disgard die to GPS not available 

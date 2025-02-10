@@ -352,6 +352,8 @@ func handleSettingsSetRequest(w http.ResponseWriter, r *http.Request) {
 						globalSettings.OGN_Enabled = val.(bool)
 					case "AIS_Enabled":
 						globalSettings.AIS_Enabled = val.(bool)
+					case "Daisy_Enabled":
+						globalSettings.Daisy_Enabled = val(bool)
 					case "APRS_Enabled":
 						globalSettings.APRS_Enabled = val.(bool)
 					case "Ping_Enabled":

@@ -56,6 +56,9 @@ function StatusCtrl($rootScope, $scope, $state, $http, $interval, craftService) 
 			$scope.AIS_messages_last_minute = status.AIS_messages_last_minute;
 			$scope.AIS_messages_max = status.AIS_messages_max;
 			$scope.AIS_connected = status.AIS_connected;
+           		$scope.Daisy_messages_last_minute = status.Daisy_messages_last_minute;
+                        $scope.Daisy_messages_max = status.Daisy_messages_max;
+                        $scope.Daisy_connected = status.Daisy_connected;
 			$scope.GPS_satellites_locked = status.GPS_satellites_locked;
 			$scope.GPS_satellites_tracked = status.GPS_satellites_tracked;
 			$scope.GPS_satellites_seen = status.GPS_satellites_seen;
@@ -191,6 +194,7 @@ function StatusCtrl($rootScope, $scope, $state, $http, $interval, craftService) 
 		$scope.uatStyleColor = craftService.getTrafficSourceColor(2);
 		$scope.ognStyleColor = craftService.getTrafficSourceColor(4);
 		$scope.aisStyleColor = craftService.getTrafficSourceColor(5);
+		$scope.DaisyStyleColor = craftService.getTrafficSourceColor(5);
 
 		// Simple GET request example (note: responce is asynchronous)
 		$http.get(URL_SETTINGS_GET).
@@ -201,6 +205,7 @@ function StatusCtrl($rootScope, $scope, $state, $http, $interval, craftService) 
 			$scope.visible_es = settings.ES_Enabled;
 			$scope.visible_ogn = settings.OGN_Enabled;
 			$scope.visible_ais = settings.AIS_Enabled;
+                        $scope.visible_Daisy = settings.Daisy_Enabled;
 			$scope.visible_ping = settings.Ping_Enabled;
 			if (settings.Ping_Enabled) {
 				$scope.visible_uat = true;

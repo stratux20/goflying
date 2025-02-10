@@ -1,0 +1,4 @@
+  File "/home/pi/stratux/scripts/read_nmea.py", line 49
+    print(f"Erreur de décodage : {e}")data:
+                                       ^
+SyntaxError: invalid syntax

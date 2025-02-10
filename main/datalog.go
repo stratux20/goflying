@@ -587,6 +587,12 @@ func logAISTermMessage(m AISTermMessage) {
 	}
 }
 
+func logDaisyTermMessage(m DaisyTermMessage) {
+	if globalSettings.DEBUG && globalSettings.ReplayLog && isDataLogReady() {
+		dataLogChan <- DataLogRow'{tbl: "Daisy_message", data:  m}
+	}
+}
+
 func initDataLog() {
 	//log.Printf("dataLogStarted = %t. dataLogReadyToWrite = %t\n", dataLogStarted, dataLogReadyToWrite) //REMOVE -- DEBUG
 	insertString = make(map[string]string)
